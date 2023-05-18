@@ -23,6 +23,6 @@ public class CandidateController {
 
     @GetMapping()
     public void writeDataToPdf() throws DocumentException, FileNotFoundException {
-        canService.exportDataToPdf("C:\\Users\\user\\Desktop\\Test\\JavaSyllabus2022.pdf");
+        canService.exportDataToPdf("C:\\Users\\user\\Desktop\\Test\\Candidates.pdf");
     }
 }
