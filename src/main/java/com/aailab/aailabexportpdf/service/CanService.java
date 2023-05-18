@@ -1,9 +1,9 @@
 package com.aailab.aailabexportpdf.service;
 
+import com.aailab.aailabexportpdf.entity.Candidate;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfWriter;
-import dto.CandidateDto;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
@@ -13,7 +13,7 @@ import java.io.FileOutputStream;
 public class CanService {
 
 
-    CandidateDto candidateDto = CandidateDto.builder()
+    Candidate candidate = Candidate.builder()
             .id(1)
             .name("Vusal")
             .surname("Ahmadov")
@@ -33,20 +33,20 @@ public class CanService {
             .anotherPersonalAddition(0.0)
             .build();
 
-    String data = "1. İşçinin soyadı, adı, atasının adı : " + candidateDto.getSurname() + " "+ candidateDto.getName()+ " "  + candidateDto.getFatherName() + "\n"
-            + "2. Struktur bölmə: " + candidateDto.getStructuralSection() + "\n"
-            + "3. Alt struktur bölmə: " + candidateDto.getSubStructuralSection() + " \n"
-            + "4. Alt bölmə: " + candidateDto.getSubSection() + "\n"
-            + "5. Vəzifəsi: " + candidateDto.getPositon()+ "\n"
-            + "6. İşə qəbul tarixi:" + candidateDto.getDateOfEmployement() + "\n"
-            + "7. Sınaq müddəti: "+ candidateDto.getProbation()+"\n"
-            + "8. İş rejimi: "+ candidateDto.getOperatingMode()+"\n"
-            + "9. İş müddəti: " + candidateDto.getWorkTime()+ "\n"
-            + "10. Əmək haqqı: " +  candidateDto.getSalary() + " (vergilər və digər ödənişlər daxil olmaqla)\n"
-            + "   10.1 Dərəcəsi: " + candidateDto.getDegree() +"\n"
-            + "   10.2 Ştat üzrə əsas əmək haqqı: " + candidateDto.getBasicSalaryByState() + "\n"
-            + "   10.3 Əmək şəraitinə görə əlavə:" + candidateDto.getAdditonalDueWorkingConditions() + "AZN\n"
-            + "   10.4 Digər fərdi əlavə: " + candidateDto.getAnotherPersonalAddition()+ "\n"
+    String data = "1. İşçinin soyadı, adı, atasının adı : " + candidate.getSurname() + " "+ candidate.getName()+ " "  + candidate.getFatherName() + "\n"
+            + "2. Struktur bölmə: " + candidate.getStructuralSection() + "\n"
+            + "3. Alt struktur bölmə: " + candidate.getSubStructuralSection() + " \n"
+            + "4. Alt bölmə: " + candidate.getSubSection() + "\n"
+            + "5. Vəzifəsi: " + candidate.getPositon()+ "\n"
+            + "6. İşə qəbul tarixi:" + candidate.getDateOfEmployement() + "\n"
+            + "7. Sınaq müddəti: "+ candidate.getProbation()+"\n"
+            + "8. İş rejimi: "+ candidate.getOperatingMode()+"\n"
+            + "9. İş müddəti: " + candidate.getWorkTime()+ "\n"
+            + "10. Əmək haqqı: " +  candidate.getSalary() + " (vergilər və digər ödənişlər daxil olmaqla)\n"
+            + "   10.1 Dərəcəsi: " + candidate.getDegree() +"\n"
+            + "   10.2 Ştat üzrə əsas əmək haqqı: " + candidate.getBasicSalaryByState() + "\n"
+            + "   10.3 Əmək şəraitinə görə əlavə:" + candidate.getAdditonalDueWorkingConditions() + "AZN\n"
+            + "   10.4 Digər fərdi əlavə: " + candidate.getAnotherPersonalAddition()+ "\n"
             + "11. Maliyyə və İnsan resursları tapşırılsın ki, əmrdən irəli gələn zəruri \n"
             + "məsələlərin həllini təmin etsinlər.\n"
             + "12. Əmr imzalandığı gündən qüvvəyə minir \n";
